@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak | ECommerce</title>
+    <link rel="icon" href="assets/img/logoatas.jpeg" type="img/jpeg">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+      :root {
+    --main-color: white; /* White background for main color */
+    --sec-color: white;  /* White color for secondary elements */
+    --text-color: black; /* Black text color */
+    --bg-color: white;   /* White background */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color); /* White background */
+    color: var(--text-color); /* Black text */
+}
+
+/* Styling untuk Logo dan Nama ECommerce */
+header.nav {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 10px; /* Padding */
+    background-color: var(--main-color); /* Background color for header */
+}
+
+header.nav .logo {
+    display: flex;
+    align-items: center; /* Center logo and text */
+    text-align: center; /* Center text */
+    gap: 8px; /* Gap between logo and name */
+}
+
+header.nav .logo img {
+    width: 40px; /* Logo size */
+    height: auto;
+    border-radius: 50%; /* Circular logo */
+}
+
+header.nav .logo span {
+    font-size: 1.2em; /* Font size for the e-commerce name */
+    font-weight: bold;
+    color: var(--text-color); /* Black text for logo name */
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* Reduced padding */
+    background-color: var(--main-color); /* Background color for navigation */
+    color: var(--text-color); /* Black text for nav items */
+}
+/* Contact Section Styles */
+.contact-section {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    padding: 40px; /* Padding for the section */
+    background-color: var(--main-color); /* Background color for Contact section */
+    color: var(--text-color); /* Text color */
+    text-align: center; /* Center the text */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 600px; /* Max width for the contact box */
+    margin: 20px auto; /* Center the section with margin */
+}
+
+.logo {
+    font-size: 1.2rem; /* Logo font size */
+    color: var(--text-color); /* Black color for logo */
+    text-decoration: none;
+}
+
+/* Hamburger Menu Styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color); /* Black bars for hamburger */
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Flex display for horizontal menu */
+}
+
+nav ul li {
+    margin-left: 20px; /* Space between menu items */
+}
+
+nav ul li a {
+    text-decoration: none; /* No underline */
+    color: var(--text-color); /* Black text for links */
+    font-size: 1rem; /* Font size for links */
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Sembunyikan di perangkat mobile */
+        flex-direction: column; /* Menampilkan dalam kolom */
+        background-color: rgb(240, 240, 240); /* Warna latar belakang menu */
+        position: absolute;
+        top: 50px; /* Menggeser menu ke bawah dari hamburger */
+        left: 0;
+        width: 100%; /* Lebar penuh */
+        padding: 5px; /* Padding dalam menu */
+        z-index: 999; /* Di atas konten lainnya */
+        border-top: 1px solid rgb(204, 204, 204); /* Garis pemisah di atas */
+    }
+    .menu-toggle {
+        display: flex; /* Show hamburger on mobile */
+    }
+    nav ul.active {
+        display: flex; /* Show menu when active */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Space between mobile menu items */
+    }
+}
+
+/* About Section Styles */
+.about-section {
+    padding: 60px 20px; /* Increased padding */
+    text-align: center;
+    background-color: var(--main-color); /* Background color for About section */
+    color: var(--text-color); /* Black text */
+}
+
+.about-section h1 {
+    font-size: 3rem; /* Increased heading font size */
+    margin-bottom: 30px; /* Space below heading */
+    letter-spacing: 1px; /* Letter spacing */
+    font-weight: bold; /* Bold heading */
+}
+
+.about-section p {
+    font-size: 1.2rem; /* Paragraph font size */
+    line-height: 2; /* Line height for readability */
+    max-width: 800px; /* Max width for paragraph */
+    margin: 0 auto; /* Center the text */
+    padding: 20px; /* Padding for breathing room */
+    font-weight: normal; /* Normal weight for paragraph text */
+}
+
+/* Team Section Styles */
+.team-section {
+    padding: 50px 20px;
+    background-color: var(--main-color); /* White background for team section */
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 2rem; /* Team section heading font size */
+    margin-bottom: 40px; /* Space below heading */
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center team members */
+    gap: 20px; /* Space between team members */
+}
+
+.team-member {
+    background-color: #f4f4f4; /* Light gray for team member boxes */
+    padding: 20px; /* Padding inside team member box */
+    border-radius: 10px; /* Rounded corners */
+    width: 250px; /* Width of team member box */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.team-member img {
+    width: 100px; /* Image size */
+    height: 100px; /* Image size */
+    border-radius: 50%; /* Circular image */
+    margin-bottom: 20px; /* Space below image */
+}
+
+.team-member h3 {
+    font-size: 1.2rem; /* Heading font size for team member */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.team-member p {
+    font-size: 1rem; /* Paragraph font size for team member */
+    color: #777; /* Gray color for text */
+}
+
+.team-member .social-icons a {
+    margin: 5px; /* Space around social icons */
+    color: var(--text-color); /* Color for social icons */
+    font-size: 1.5rem; /* Font size for social icons */
+    text-decoration: none; /* No underline */
+}
+
+.team-member .social-icons a:hover {
+    color: var(--main-color); /* Change color on hover */
+}
+/* Contact Section Styles */
+.contact-section {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    padding: 40px; /* Padding for the section */
+    background-color: var(--main-color); /* Background color for Contact section */
+    color: var(--text-color); /* Text color */
+    text-align: center; /* Center the text */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 600px; /* Max width for the contact box */
+    margin: 20px auto; /* Center the section with margin */
+}
+
+/* Input Fields Styling */
+.contact-input {
+    width: 90%; /* Set to 90% of the container's width */
+    max-width: 500px; /* Max width to prevent stretching too wide */
+    padding: 10px; /* Padding inside the input fields */
+    margin: 10px 0; /* Space above and below the input fields */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size for the input text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Textarea Styling */
+.contact-input-textarea {
+    height: 120px; /* Height for the textarea */
+    font-size: 1.5rem; /* Increased font size for better readability */
+    padding: 12px; /* Padding for the textarea */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 95%; /* Set width to 95% of the container's width */
+    max-width: 700px; /* Increased max width */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .team-container {
+        flex-direction: column; /* Stack team members vertically on small screens */
+        align-items: center; /* Center align */
+    }
+
+    .team-member {
+        width: 100%; /* Full width on small screens */
+        max-width: 400px; /* Max width */
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="nav">
+        <a href="index.html" class="logo">
+            <img src="assets/img/logo.jpeg" alt="Logo" class="logo-image">
+            <span><span>E</span>Commerce</span>
+        </a>
+
+        <!-- Hamburger Menu Icon -->
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!-- Navigation links -->
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">All Produk</a></li>
+                <li><a href="tentang kami.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h1>Kontak Kami</h1>
+        <div class="contact-info">
+            <p>Jika Anda memiliki pertanyaan atau saran, jangan ragu untuk menghubungi kami melalui formulir di bawah ini.</p>
+            <p style="color: black;">Email: example@recipient.com</p> <!-- Email paragraph with black color -->
+            <p>Telepon: 087877611218</p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class='bx bxl-twitter'></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Hubungi Kami</h2>
+            <form id="contact-form">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Pesan:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Kirim</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 20px; background-color: rgb(241, 241, 241); color: rgb(0, 0, 0);">
+        <p>&copy; 2024 ECommerce by olan</p>
+    </footer>
+
+    <!-- JavaScript to toggle mobile menu -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the values from the form
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Check if fields are empty
+    if (!name || !email || !message) {
+        alert('Semua kolom harus diisi!');
+        return;
+    }
+
+    // Construct the WhatsApp message
+    const whatsappMessage = `Nama: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0APesan: ${encodeURIComponent(message)}`;
+    const whatsappNumber = '6287877611218'; // Your WhatsApp number
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+    // Notify the user
+    alert("Pesan Anda sedang dikirim ke WhatsApp...");
+
+    // Redirect to WhatsApp
+    window.open(whatsappURL, '_blank'); // Open in a new tab
+});
+    </script>
+</body>
+
+</html>

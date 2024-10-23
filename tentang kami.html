@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami | ECommerce</title>
+    <link rel="icon" href="assets/img/logoatas.jpeg" type="img/jpeg">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+  :root {
+    --main-color: white; /* White background for main color */
+    --sec-color: white;  /* White color for secondary elements */
+    --text-color: black; /* Black text color */
+    --bg-color: white;   /* White background */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color); /* White background */
+    color: var(--text-color); /* Black text */
+}
+
+/* Styling untuk Logo dan Nama ECommerce */
+header.nav {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 10px; /* Padding */
+    background-color: var(--main-color); /* Background color for header */
+}
+
+header.nav .logo {
+    display: flex;
+    align-items: center; /* Center logo and text */
+    text-align: center; /* Center text */
+    gap: 8px; /* Gap between logo and name */
+}
+
+header.nav .logo img {
+    width: 40px; /* Logo size */
+    height: auto;
+    border-radius: 50%; /* Circular logo */
+}
+
+header.nav .logo span {
+    font-size: 1.2em; /* Font size for the e-commerce name */
+    font-weight: bold;
+    color: #000; /* Black text for logo name */
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* Reduced padding */
+    background-color: var(--main-color); /* Background color for navigation */
+    color: #000; /* Black text for nav items */
+}
+
+.logo {
+    font-size: 1.2rem; /* Logo font size */
+    color: #000; /* Black color for logo */
+    text-decoration: none;
+}
+
+/* Hamburger Menu Styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000; /* Black bars for hamburger */
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Flex display for horizontal menu */
+}
+
+nav ul li {
+    margin-left: 20px; /* Space between menu items */
+}
+
+nav ul li a {
+    text-decoration: none; /* No underline */
+    color: #000; /* Black text for links */
+    font-size: 1rem; /* Font size for links */
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Sembunyikan di perangkat mobile */
+        flex-direction: column; /* Menampilkan dalam kolom */
+        background-color: rgb(240, 240, 240); /* Warna latar belakang menu */
+        position: absolute;
+        top: 50px; /* Menggeser menu ke bawah dari hamburger */
+        left: 0;
+        width: 100%; /* Lebar penuh */
+        padding: 5px; /* Padding dalam menu */
+        z-index: 999; /* Di atas konten lainnya */
+        border-top: 1px solid rgb(204, 204, 204); /* Garis pemisah di atas */
+    }
+    .menu-toggle {
+        display: flex; /* Show hamburger on mobile */
+    }
+    nav ul.active {
+        display: flex; /* Show menu when active */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Space between mobile menu items */
+    }
+}
+
+.about-section {
+    padding: 60px 20px; /* Padding untuk section */
+    text-align: center; /* Rata tengah untuk teks */
+    background-color: var(--main-color); /* Warna latar belakang untuk section */
+    color: var(--text-color); /* Warna teks */
+}
+
+.about-section h1 {
+    font-size: 3rem; /* Ukuran font untuk heading */
+    margin-bottom: 30px; /* Jarak bawah untuk heading */
+    letter-spacing: 1px; /* Jarak antar huruf */
+    font-weight: bold; /* Font tebal untuk heading */
+}
+
+.about-box {
+    background-color: #f4f4f4; /* Warna latar belakang kotak */
+    border-radius: 10px; /* Sudut bulat */
+    padding: 20px; /* Padding di dalam kotak */
+    max-width: 800px; /* Lebar maksimum kotak */
+    margin: 0 auto; /* Pusatkan kotak di halaman */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk kotak */
+}
+
+.about-box p {
+    font-size: 1.2rem; /* Ukuran font untuk paragraf */
+    line-height: 1.6; /* Tinggi garis untuk keterbacaan */
+    margin: 15px 0; /* Jarak antar paragraf */
+    color: #333; /* Warna teks untuk paragraf */
+}
+
+
+
+/* Team Section Styles */
+.team-section {
+    padding: 50px 20px;
+    background-color: #fff; /* White background for team section */
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 2rem; /* Team section heading font size */
+    margin-bottom: 40px; /* Space below heading */
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center team members */
+    gap: 20px; /* Space between team members */
+}
+
+.team-member {
+    background-color: #f4f4f4; /* Light gray for team member boxes */
+    padding: 20px; /* Padding inside team member box */
+    border-radius: 10px; /* Rounded corners */
+    width: 250px; /* Width of team member box */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.team-member img {
+    width: 100px; /* Image size */
+    height: 100px; /* Image size */
+    border-radius: 50%; /* Circular image */
+    margin-bottom: 20px; /* Space below image */
+}
+
+.team-member h3 {
+    font-size: 1.2rem; /* Heading font size for team member */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.team-member p {
+    font-size: 1rem; /* Paragraph font size for team member */
+    color: #777; /* Gray color for text */
+}
+
+.team-member .social-icons a {
+    margin: 5px; /* Space around social icons */
+    color: #333; /* Color for social icons */
+    font-size: 1.5rem; /* Font size for social icons */
+    text-decoration: none; /* No underline */
+}
+
+.team-member .social-icons a:hover {
+    color: var(--main-color); /* Change color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .team-container {
+        flex-direction: column; /* Stack team members vertically on small screens */
+        align-items: center; /* Center align */
+    }
+
+    .team-member {
+        width: 100%; /* Full width on small screens */
+        max-width: 400px; /* Max width */
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="nav">
+        <a href="index.html" class="logo">
+            <img src="assets/img/logo.jpeg" alt="Logo" class="logo-image">
+            <span><span>E</span>Commerce</span>
+        </a>
+
+        <!-- Hamburger Menu Icon -->
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!-- Navigation links -->
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">All Produk</a></li>
+                <li><a href="tentang kami.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <section class="about-section">
+        <h1>Tentang Kami</h1>
+        <div class="about-box">
+            <p>Kami adalah sebuah perusahaan yang berdedikasi untuk memberikan pengalaman terbaik dalam setiap produk yang kami tawarkan. Dengan fokus pada kualitas dan pelayanan pelanggan, kami berusaha untuk memenuhi kebutuhan Anda dengan inovasi dan kreativitas.</p>
+            <p>Visi kami adalah menjadi pemimpin di industri kami dengan memberikan produk berkualitas tinggi yang membuat hidup Anda lebih baik. Kami percaya bahwa kepuasan pelanggan adalah kunci keberhasilan kami.</p>
+            <p>Bergabunglah dengan kami dalam perjalanan ini dan temukan produk yang dirancang khusus untuk Anda!</p>
+        </div>
+    </section>
+    
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <h2>Tim Kami</h2>
+        <div class="team-container">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="assets/img/member1.jpg" alt="Member 1">
+                <h3>Andi Wijaya</h3>
+                <p>CEO & Founder</p>
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="assets/img/member2.jpg" alt="Member 2">
+                <h3>Siti Rahma</h3>
+                <p>COO</p>
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="assets/img/member3.jpg" alt="Member 3">
+                <h3>Budi Santoso</h3>
+                <p>Chief Marketing Officer</p>
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+   <footer style="text-align: center; padding: 20px; background-color: rgb(241, 241, 241); color: rgb(0, 0, 0);">
+    <p>&copy; 2024 ECommerce by olan</p>
+</footer>
+
+    <!-- JavaScript to toggle mobile menu -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

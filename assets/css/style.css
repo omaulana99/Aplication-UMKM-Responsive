@@ -1,0 +1,604 @@
+/* Google Fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Globals  */
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding: 2rem;
+}
+/* Variables  */
+
+::selection{
+    color: var(--text-color);
+    background-color: var(--main-color);
+}
+.container{
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+section{
+    padding: 4rem 0 3rem;
+}
+:root {
+    --main-color: rgb(0, 0, 0); /* White color */
+    --sec-color: white;  /* White color */
+    --text-color: rgb(0, 0, 0); /* White text */
+    --bg-color: white;   /* White background */
+}
+
+body {
+    background-color: var(--bg-color); /* White background */
+    background: var(--bg-color); /* Solid white background */
+    color: var(--text-color); /* White text */
+}
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: rgb(0, 0, 0); /* Light text color */
+}
+
+/* Other dark mode styles for your elements can be added here */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px; /* Adjust width as needed */
+    height: 34px; /* Adjust height as needed */
+}
+
+.switch input {
+    opacity: 0; /* Hide the default checkbox */
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0); /* Light background for the slider */
+    border-radius: 34px; /* Rounded corners */
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Adjust for moon size */
+    width: 26px; /* Adjust for moon size */
+    border-radius: 50%; /* Make it circular */
+    background-image: url('assets/img/mode gelap.png'); /* Replace with your image path */
+    background-size: cover; /* Ensure the image covers the area */
+    left: 4px; /* Position the moon */
+    bottom: 4px; /* Position the moon */
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #000000; /* Color when checked */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px); /* Move the moon to the right */
+}
+
+
+.menu-toggle {
+    display: none; /* Sembunyikan di desktop */
+    flex-direction: column; /* Susun bar secara vertikal */
+    cursor: pointer; /* Tangan saat hover */
+    position: absolute; /* Posisi absolut untuk kontrol lebih baik */
+    left: 10px; /* Jarak dari kiri */
+    top: 10px; /* Jarak dari atas */
+    z-index: 1000; /* Agar di atas elemen lain */
+}
+
+.menu-toggle .bar {
+    height: 3px; /* Ketebalan garis */
+    width: 25px; /* Lebar garis */
+    background-color: black; /* Warna garis hitam */
+    margin: 3px 0; /* Jarak antar garis */
+    transition: 0.3s; /* Transisi halus saat hover */
+}
+
+nav {
+    display: flex; /* Menampilkan navbar secara horizontal */
+    align-items: center; /* Rata tengah vertikal */
+    background-color: transparent; /* Latar belakang navbar transparan */
+    padding: 10px; /* Padding navbar */
+}
+
+nav ul {
+    display: flex; /* Menampilkan list dalam baris */
+    list-style: none; /* Menghilangkan bullet points */
+    margin: 0; /* Menghilangkan margin */
+    padding: 0; /* Menghilangkan padding */
+}
+
+nav ul li {
+    margin-left: 20px; /* Jarak antar item */
+}
+
+nav ul li a {
+    text-decoration: none; /* Menghilangkan garis bawah */
+    padding: 10px 15px; /* Ruang dalam untuk membuat tombol lebih besar */
+    color: black; /* Ubah warna teks menjadi hitam */
+    border: 2px solid transparent; /* Border transparan untuk efek hover */
+    border-radius: 5px; /* Sudut membulat */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Animasi perubahan warna */
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Warna latar belakang saat hover dengan transparansi */
+    color: black; /* Mengubah warna teks saat hover */
+    border-color: white; /* Mengubah warna border saat hover */
+}
+
+.btn-buy {
+    background: linear-gradient(135deg, #121212, #feb47b); /* Gradient background */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 12px 24px; /* Padding for button */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Button shadow */
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+}
+
+.btn-buy:hover {
+    background: linear-gradient(135deg, #000000, #ff7e5f); /* Invert gradient on hover */
+    transform: scale(1.05); /* Slightly scale up the button on hover */
+}
+
+.btn-buy:active {
+    transform: scale(0.98); /* Slightly scale down on click */
+}
+
+
+/* Styling untuk About dan Contact Section */
+#about, #contact {
+    display: flex;
+    flex-direction: column; /* Susun konten dalam kolom */
+    align-items: center; /* Rata tengah secara horizontal */
+    justify-content: center; /* Rata tengah secara vertikal */
+    height: calc(100vh - 60px); /* Tinggi penuh mengurangi tinggi navbar */
+}
+
+.container {
+    max-width: 600px; /* Lebar maksimum untuk konten */
+    text-align: center; /* Rata tengah teks */
+}
+
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Sembunyikan di perangkat mobile */
+        flex-direction: column; /* Menampilkan dalam kolom */
+        background-color: rgb(240, 240, 240); /* Warna latar belakang menu */
+        position: absolute;
+        top: 50px; /* Menggeser menu ke bawah dari hamburger */
+        left: 0;
+        width: 100%; /* Lebar penuh */
+        padding: 5px; /* Padding dalam menu */
+        z-index: 999; /* Di atas konten lainnya */
+        border-top: 1px solid rgb(204, 204, 204); /* Garis pemisah di atas */
+    }
+
+    nav ul.open {
+        display: block; /* Menampilkan saat menu dibuka */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Jarak antar item di dalam menu hamburger */
+        text-align: left; /* Rata kiri teks untuk menu */
+    }
+
+    nav ul li a {
+        padding: 8px 15px; /* Ruang dalam untuk tombol di menu hamburger */
+        font-size: 16px; /* Ukuran font sedikit lebih kecil di dalam menu */
+        text-align: left; /* Rata kiri teks */
+    }
+
+    .menu-toggle {
+        display: flex; /* Menampilkan ikon hamburger di perangkat mobile */
+    }
+}
+
+
+form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-buy {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-buy:hover {
+    background-color: #4cae4c;
+}
+
+img{
+    width: 100%;
+}
+
+/* =======================================  */
+/* HEADER  */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+    z-index: 100;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+/* Style untuk container logo */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Menghilangkan underline */
+}
+
+/* Ukuran gambar logo */
+.logo-image {
+  width: 40px; /* Sesuaikan ukuran gambar */
+  height: auto;
+  margin-right: 8px; /* Spasi antara gambar logo dan teks */
+}
+
+/* Style untuk teks logo */
+.logo span {
+  font-size: 18px; /* Sesuaikan ukuran teks */
+  font-weight: bold;
+  color: var(--main-color); /* Menggunakan warna utama dari skema warna */
+}
+
+.logo span span {
+  color: var(--sec-color); /* Warna khusus untuk huruf pertama */
+}
+/* Container for search input, search button, and barcode button */
+.search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 15px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Style for the search input */
+#search-input {
+    flex: 1;
+    max-width: 500px;
+    padding: 15px;
+    border: 1px solid var(--sec-color);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Base style for buttons */
+.button {
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white; /* Warna teks putih */
+    border: none;
+    border-radius: 12px; /* Sudut melengkung yang lebih halus */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #f0f0f0, #c8c8c8); /* Gradasi lembut */
+}
+
+/* Style for the search button */
+#search-button {
+    background-color: #f3f3f3; /* Warna biru cerah */
+    background-image: linear-gradient(135deg, #f0f0f0, #fcfcfc); /* Gradasi biru */
+    color: rgb(0, 0, 0); /* Pastikan warna teks tetap putih */
+    margin-left: 10px;
+}
+
+/* Style for the barcode button */
+#barcode {
+    background-color: #f0f0f0; /* Warna oranye */
+    background-image: linear-gradient(135deg, #f7f7f7, #fbfbfb); /* Gradasi oranye */
+    color: rgb(0, 0, 0); /* Pastikan warna teks tetap putih */
+    margin-right: 10px;
+}
+
+/* Hover effect for search button */
+#search-button:hover {
+    background-image: linear-gradient(135deg, #fefefe, #ffffff); /* Gradasi hijau kebiruan saat hover */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for barcode button */
+#barcode:hover {
+    background-image: linear-gradient(135deg, #fcfcfc, #f2f0f0); /* Gradasi oranye ke merah saat hover */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+#cart-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* CART ICON CONTAINER */
+
+.cart-icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+#cart-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.item-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.notification {
+    display: none;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+
+.item-count {
+    position: absolute;
+    top: -5px; /* Atur posisi angka sesuai kebutuhan */
+    right: -10px; /* Atur posisi angka sesuai kebutuhan */
+    background-color: var(--main-color); /* Warna latar belakang angka */
+    color: white; /* Warna teks */
+    border-radius: 50%; /* Membuat angka menjadi bulat */
+    width: 20px; /* Lebar angka */
+    height: 20px; /* Tinggi angka, sama dengan lebar agar bulat */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem; /* Ukuran font */
+}
+
+.add-cart {
+    font-size: 24px; /* Size of the icon */
+    color: #151515; /* Initial color */
+    cursor: pointer; /* Pointer on hover */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    margin: 0 10px; /* Space around the icon */
+}
+
+.add-cart:hover {
+    color: #000000; /* Change color on hover */
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
+.add-cart:active {
+    transform: scale(0.9); /* Shrink icon on click */
+}
+
+
+.cart{
+    position: fixed;
+    top: 0;
+    right: 0;
+    right: -100%; 
+    width: 360px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    background-color: var(--bg-color);
+    box-shadow: -2px solid 4px hsl(0 4% 15% / 10%);
+    border: 1px solid var(--main-color);
+    transition: 1.5s;
+}
+.cart.active{
+    right: 0;
+    transition: .5s;
+}
+.cart-title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+.cart-box{
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.cart-img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 10px;
+}
+.product-box {
+    position: relative; /* Ensure positioning for absolute elements */
+    overflow: hidden; /* Hide overflow to maintain clean edges */
+    border: 1px solid #ccc; /* Optional border for product box */
+    border-radius: 8px; /* Optional rounded corners */
+    padding: 10px; /* Add some padding */
+    background-color: #fff; /* White background */
+    transition: transform 0.3s; /* Animation for hover effect */
+}
+
+.product-box:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.product-info {
+    position: absolute; /* Position absolutely within the product box */
+    bottom: 10px; /* Position from the bottom */
+    left: 10px; /* Position from the left */
+    right: 10px; /* Position from the right */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 10px; /* Add padding */
+    border-radius: 5px; /* Rounded corners for the info box */
+    text-align: center; /* Center text */
+}
+
+.product-title {
+    font-size: 1.2em; /* Font size for title */
+    color: var(--text-color); /* Use your text color variable */
+}
+
+.product-price {
+    font-size: 1em; /* Font size for price */
+    color: var(--text-color); /* Use your text color variable */
+}
+
+.cart-remove{
+    font-size: 24px;
+    color: var(--main-color);
+    cursor: pointer;
+}
+.total{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--text-color);
+}
+.total-title{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.total-price{
+    margin-left: .5rem;
+}
+.btn-buy{
+    display: flex;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    border: none;
+    background-color: var(--sec-color);
+    color: var(--bg-color);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btn-buy:hover{
+    background-color: var(--text-color);
+}
+#cart-close{
+    position: absolute;
+    top: 1rem;
+    right: .8rem;
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+
+
+/* ================ RESPONSIVE & BREAKPOINTS ============= */
+@media (max-width: 1080px){
+    .nav{
+        padding: 15px;
+    }
+    .container{
+        width: 90%;
+        margin: 0 auto;
+    }
+    section{
+        padding: 3rem 0 2rem;
+    }
+    .shop{
+        margin-top: 2rem;
+    }
+}
+
+/* For Medium Devices */
+@media (max-width: 400px){
+    .nav{
+        padding: 11px;
+    }
+    .logo{
+        font-size: 1rem;
+    }
+    .cart{
+        width: 320px;
+    }
+}
+
+/* For Small Devices */
+@media (max-width: 360px){
+    .shop{
+        margin-top: 1rem;
+    }
+    .cart{
+        width: 280px;
+    }
+}
